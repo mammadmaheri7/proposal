@@ -10,16 +10,30 @@ use Validator;
 class UserController extends Controller
 {
     public $successStatus = 200;
+
     /**
      * login api
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function login(){
-        if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
-            $user = Auth::user();
-            $success['token'] =  $user->createToken('MyApp')-> accessToken;
-            return response()->json(['success' => $success], $this-> successStatus);
+    public function login(Request $request){
+        $validator = Validator::make($request->all(), [
+            'national_number' => 'required',
+            'password' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'failed',
+                'error' => $validator->errors(),
+            ], 401);
+        }
+
+        if(Auth::guard('web')->attempt(['national_number' => request('national_number'), 'password' => request('password')])){
+            $user = Auth::guard('web')->user();
+            $token =  $user->createToken('MyApp')-> accessToken;
+            return response()->json(['status' => 'success','auth_token'=>$token , 'role_id'=>$user->role->id], $this-> successStatus);
         }
         else{
             return response()->json(['error'=>'Unauthorised'], 401);
