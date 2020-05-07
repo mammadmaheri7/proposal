@@ -33,16 +33,19 @@ class UserController extends Controller
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required',
             'c_password' => 'required|same:password',
-            'national_number' => 'required',
+            'national_number' => 'required|unique:users,national_number',
             'first_name'=>'required',
             'last_name'=>'required',
             'role_id'=>'required'
         ]);
         if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
+            return response()->json([
+                'status' => 'failed',
+                'error' => $validator->errors(),
+            ], 401);
         }
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
@@ -51,9 +54,12 @@ class UserController extends Controller
         $user = User::create($input);
 
         //$user->role()->save($request->input('role_id'));
-        $success['token'] =  $user->createToken('MyApp')-> accessToken;
-        $success['name'] =  $user->name;
-        return response()->json(['success'=>$success], $this-> successStatus);
+        $response = [
+            'status' => 'success',
+            'token' => $user->createToken('MyApp')-> accessToken,
+        ];
+
+        return response()->json($response, $this-> successStatus);
     }
     /**
      * details api
