@@ -33,7 +33,13 @@ class UserController extends Controller
         if(Auth::guard('web')->attempt(['national_number' => request('national_number'), 'password' => request('password')])){
             $user = Auth::guard('web')->user();
             $token =  $user->createToken('MyApp')-> accessToken;
-            return response()->json(['status' => 'success','auth_token'=>$token , 'role_id'=>$user->role->id], $this-> successStatus);
+            $response = [
+                'status' => 'success',
+                'auth_token'=>$token ,
+                'role_id'=>$user->role->id,
+                'user_information' => $user
+            ];
+            return response()->json($response, $this-> successStatus);
         }
         else{
             return response()->json(['error'=>'Unauthorised'], 401);
