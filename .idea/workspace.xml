@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f3d70b9-77ff-4ba7-9662-36ee1e12653e" name="Default" comment="release">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Major.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/api.php" afterPath="$PROJECT_DIR$/routes/api.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2020_05_08_171544_create_proposals_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_05_08_171544_create_proposals_table.php" />
     </list>
     <ignored path="proposal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,18 +23,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="SupervisorController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/SupervisorController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="710">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding>
-                <element signature="e#45#62#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DatabaseSeeder.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -73,11 +55,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfessorFactory.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProfessorFactory.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/factories/ProfessorFactory.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="560">
               <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2020_05_08_171544_create_proposals_table.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_08_171544_create_proposals_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="23" column="66" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -169,7 +161,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2020_05_08_170742_create_fields_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_05_08_171403_create_proposal_results_table.php" />
         <option value="$PROJECT_DIR$/app/Professor.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_05_08_171544_create_proposals_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/ProposalSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/MajorSeeder.php" />
         <option value="$PROJECT_DIR$/app/Student.php" />
@@ -182,6 +173,7 @@
         <option value="$PROJECT_DIR$/database/factories/StudentFactory.php" />
         <option value="$PROJECT_DIR$/database/seeds/UserSeeder.php" />
         <option value="$PROJECT_DIR$/database/factories/ProfessorFactory.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_05_08_171544_create_proposals_table.php" />
       </list>
     </option>
   </component>
@@ -498,7 +490,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588790669911</updated>
       <workItem from="1588790674002" duration="19490000" />
-      <workItem from="1588943168980" duration="19336000" />
+      <workItem from="1588943168980" duration="19526000" />
     </task>
     <task id="LOCAL-00001" summary="release">
       <created>1588813442407</created>
@@ -511,7 +503,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38826000" />
+    <option name="totallyTimeSpent" value="39016000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -864,14 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_08_171544_create_proposals_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="32" column="41" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Proposal.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="427">
@@ -980,6 +964,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
           <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_08_171544_create_proposals_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="23" column="66" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
           <folding />
         </state>
       </provider>

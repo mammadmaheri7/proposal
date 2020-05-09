@@ -21,7 +21,7 @@ class CreateProposalsTable extends Migration
             $table->foreign('field_id')->references('id')->on('fields');
 
             $table->unsignedBigInteger('student_id')->nullable();
-            $table->foreign('student_id')->references('id')->on('Students');
+            $table->foreign('student_id')->references('id')->on('students');
 
             $table->unsignedBigInteger('professor_id')->nullable();
             $table->foreign('professor_id')->references('id')->on('professors');
