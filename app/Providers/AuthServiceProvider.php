@@ -26,6 +26,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        Gate::define('define-supervisor',function ($user){
+           return $user->role->title == 'admin';
+        });
+
         Passport::routes();
     }
 }
