@@ -14,7 +14,7 @@ $factory->define(\App\Professor::class, function (Faker $faker) {
     return [
         'level'             =>  $faker->randomElement(['استادتمام','استادیار']),
         'major_id'          =>  $majors[$faker->numberBetween(0,$majors->count()-1)]->id,
-        'degree'            =>  $faker->randomElement(['doctor','bachelor']),
+        'degree'            =>  $faker->randomElement(['Doctor','Bachelor']),
         'user_id'           =>  $user->id,
     ];
 });
