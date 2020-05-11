@@ -23,4 +23,6 @@ Route::post('register', 'API\UserController@register');
 Route::group(['middleware' => 'auth:api'], function(){
     Route::post('details', 'API\UserController@details');
     Route::post('define_supervisor','API\SupervisorController@define_supervisor_for_student');
+    Route::post('get_professors_information','API\DepartmentHeadController@get_professor_information');
+
 });

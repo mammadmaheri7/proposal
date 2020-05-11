@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers\API;
 
-
 use App\Proposal;
 use App\Student;
 use App\User;
-
-
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
