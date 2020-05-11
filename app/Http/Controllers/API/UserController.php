@@ -1,10 +1,13 @@
 <?php
 namespace App\Http\Controllers\API;
+use App\Professor;
 use App\Role;
+use App\Student;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Validator;
 
 class UserController extends Controller
@@ -77,6 +80,7 @@ class UserController extends Controller
         $response = [
             'status' => 'success',
             'token' => $user->createToken('MyApp')-> accessToken,
+            'user_id' => $user->id
         ];
 
         return response()->json($response, $this-> successStatus);
@@ -90,5 +94,45 @@ class UserController extends Controller
     {
         $user = Auth::user();
         return response()->json(['success' => $user], $this-> successStatus);
+    }
+
+
+    public function modify_user(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'email|unique:users,email',
+            'c_password' => 'same:password',
+            'national_number' => 'unique:users,national_number',
+            'user_id'=>'required'
+        ]);
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'failed',
+                'error' => $validator->errors(),
+            ], 401);
+        }
+
+        $user = Auth::user();
+        if (Gate::denies('modify-user-admin',$user)){
+            return response()->json(['error'=>'Unauthorised - you should be admin'], 401);
+        }
+
+        $modify_user = User::where('id',$request->input('user_id'))->first();
+        $role = $modify_user->role;
+        $modify_user->update(array_filter($request->all()));
+
+        switch ($role->title)
+        {
+            case 'student':
+                $student = Student::where('user_id',$modify_user->id)->first();
+                $student->update(array_filter(json_decode($request->input('detail'),true)));
+                break;
+            case 'professor':
+                $professor = Professor::where('user_id',$modify_user->id)->first();
+                $professor->update(array_filter(json_decode($request->input('detail'),true)));
+                break;
+        }
+
+        return response()->json(['status'=>'success']);
     }
 }

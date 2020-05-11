@@ -34,6 +34,9 @@ class AuthServiceProvider extends ServiceProvider
             return $user->role->title == 'group_manager';
         });
 
+        Gate::define('modify-user-admin',function ($user){
+            return $user->role->title == 'admin';
+        });
         Passport::routes();
     }
 }

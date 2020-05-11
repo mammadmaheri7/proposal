@@ -32,7 +32,21 @@ class Proposal extends Model
         return $this->belongsTo('App\Student');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function judge1()
+    {
+        return $this->belongsTo('App\Professor','judge1_id');
+    }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function judge2()
+    {
+        return $this->belongsTo('App\Professor');
+    }
 
 
 }
