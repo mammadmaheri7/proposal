@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('get_proposals_information','API\DepartmentHeadController@get_proposals_information');
     Route::post('choose_judge','API\DepartmentHeadController@choose_judge');
     Route::post('modify_user','API\UserController@modify_user');
+    Route::get('users','API\UserController@index');
 
 
 });

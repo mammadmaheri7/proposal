@@ -97,6 +97,10 @@ class UserController extends Controller
     }
 
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function modify_user(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -133,16 +137,24 @@ class UserController extends Controller
                 $data = array_filter(json_decode($request->input('detail'),true));
                 $professor = Professor::updateOrCreate(array_merge(['user_id'=>$modify_user->id],$data),
                     $data);
-                //$professor->update(array_filter(json_decode($request->input('detail'),true)));
-                /*
-                if($request->input('detail')['major_id']!=null)
-                {
-                    $professor->major()->associate($request->input('detail')['major_id']);
-                }
-                */
                 break;
         }
 
         return response()->json(['status'=>'success']);
+    }
+
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function index(Request $request)
+    {
+        $user = Auth::user();
+        if (Gate::denies('list-users',$user)){
+            return response()->json(['error'=>'Unauthorised - you should be admin'], 401);
+        }
+        $users = User::all();
+        return response()->json($users);
     }
 }
