@@ -121,15 +121,25 @@ class UserController extends Controller
         $role = $modify_user->role;
         $modify_user->update(array_filter($request->all()));
 
+
         switch ($role->title)
         {
             case 'student':
                 $student = Student::where('user_id',$modify_user->id)->first();
                 $student->update(array_filter(json_decode($request->input('detail'),true)));
                 break;
-            case 'professor':
-                $professor = Professor::where('user_id',$modify_user->id)->first();
-                $professor->update(array_filter(json_decode($request->input('detail'),true)));
+            case 'group_manager':
+            case 'professor' :
+                $data = array_filter(json_decode($request->input('detail'),true));
+                $professor = Professor::updateOrCreate(array_merge(['user_id'=>$modify_user->id],$data),
+                    $data);
+                //$professor->update(array_filter(json_decode($request->input('detail'),true)));
+                /*
+                if($request->input('detail')['major_id']!=null)
+                {
+                    $professor->major()->associate($request->input('detail')['major_id']);
+                }
+                */
                 break;
         }
 
