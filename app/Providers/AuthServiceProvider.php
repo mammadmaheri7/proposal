@@ -41,6 +41,10 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('list-users',function ($user){
             return $user->role->title == 'admin';
         });
+
+        Gate::define('professor',function ($user){
+            return $user->role->title=='professor';
+        });
         Passport::routes();
     }
 }

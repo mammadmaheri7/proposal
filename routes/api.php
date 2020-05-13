@@ -25,11 +25,14 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('define_supervisor','API\SupervisorController@define_supervisor_for_student');
     Route::post('get_professors_information','API\DepartmentHeadController@get_professor_information');
     Route::post('get_proposals_information','API\DepartmentHeadController@get_proposals_information');
+    Route::post('get_assigned_proposal','API\DepartmentHeadController@get_proposals_information');
     Route::post('choose_judge','API\DepartmentHeadController@choose_judge');
     Route::post('modify_user','API\UserController@modify_user');
     Route::get('users','API\UserController@index');
 
     Route::resource('major','MajorController');
     Route::resource('field','FieldController');
+
+
 
 });

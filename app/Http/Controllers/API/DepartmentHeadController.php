@@ -19,7 +19,7 @@ class DepartmentHeadController extends Controller
     public function get_professor_information(Request $request)
     {
         $user = Auth::user();
-        if (Gate::denies('department-head',$user)){
+        if (Gate::denies('department-head',$user) ){
             return response()->json(['error'=>'Unauthorised - you should be head of apartment'], 401);
         }
         $professor = Professor::where('user_id',$user->id)->first();
@@ -34,15 +34,25 @@ class DepartmentHeadController extends Controller
     public function get_proposals_information(Request $request)
     {
         $user = Auth::user();
-        if (Gate::denies('department-head',$user)){
-            return response()->json(['error'=>'Unauthorised - you should be head of apartment'], 401);
+        if (Gate::denies('department-head',$user) and Gate::denies('professor')){
+            return response()->json(['error'=>'Unauthorised - you should be head of apartment or judge'], 401);
         }
         $professor = Professor::where('user_id',$user->id)->first();
+        
 
-        $proposals = Proposal::whereHas('student' , function ($query) use ($professor) {
-                $query->where('major_id', $professor->major_id)
-                        ->orWhereNull('major_id');
-            })
+        $proposals = Proposal::
+                when($user->role_id==3,function ($query) use ($professor){
+                    $query
+                        ->whereHas('student' , function ($query) use ($professor) {
+                        $query->where('major_id', $professor->major_id)
+                            ->orWhereNull('major_id');
+                    });
+                },function ($query) use ($professor){
+                    $query
+                        ->where('judge1_id',$professor->id)
+                        ->orWhere('judge2_id',$professor->id);
+                })
+
             ->with(['student','professor','judge1','judge2','student.user','student.major'])
             ->get();
 
