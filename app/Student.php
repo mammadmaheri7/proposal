@@ -28,7 +28,7 @@ class Student extends Model
      */
     public function major()
     {
-        return $this->hasOne('App\Major');
+        return $this->belongsTo('App\Major');
     }
 
 

@@ -30,5 +30,6 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('users','API\UserController@index');
 
     Route::resource('major','MajorController');
+    Route::resource('field','FieldController');
 
 });

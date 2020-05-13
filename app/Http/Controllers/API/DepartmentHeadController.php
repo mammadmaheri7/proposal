@@ -41,9 +41,9 @@ class DepartmentHeadController extends Controller
 
         $proposals = Proposal::whereHas('student' , function ($query) use ($professor) {
                 $query->where('major_id', $professor->major_id)
-                        ->orWhereNull('major_id')
+                        ->orWhereNull('major_id');
             })
-            ->with(['student','professor','judge1','judge2','student.user'])
+            ->with(['student','professor','judge1','judge2','student.user','student.major'])
             ->get();
 
         /*
