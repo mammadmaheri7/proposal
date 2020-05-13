@@ -19,6 +19,7 @@ class ProposalSeeder extends Seeder
             'type'=>'bonyadi',
             'filename'=>'filename is here',
             'year'=>1399,
+            'user_id'=>factory(App\Student::class)->create(),
         ]);
     }
 }

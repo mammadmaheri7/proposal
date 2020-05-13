@@ -162,7 +162,7 @@ class UserController extends Controller
                     $result['students'] = Student::with('user')->get();
                     break;
                 case 'professor':
-                    $result['professors'] = Professor::with('user')->get();
+                    $result['professors'] = Professor::with('user')->get()->flatten(1);
                     break;
             }
         }
