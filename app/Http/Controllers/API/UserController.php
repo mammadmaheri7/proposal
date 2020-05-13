@@ -93,7 +93,7 @@ class UserController extends Controller
     public function details()
     {
         $user = Auth::user();
-        return response()->json(['success' => $user], $this-> successStatus);
+        return response()->json(['status' => 'success','user' => $user], $this-> successStatus);
     }
 
 
@@ -154,7 +154,24 @@ class UserController extends Controller
         if (Gate::denies('list-users',$user)){
             return response()->json(['error'=>'Unauthorised - you should be admin'], 401);
         }
-        $users = User::all();
-        return response()->json($users);
+
+        $result = [];
+        if(array_key_exists('type',$request->all())) {
+            switch ($request->input('type')){
+                case 'student':
+                    $result['students'] = Student::with('user')->get();
+                    break;
+                case 'professor':
+                    $result['professors'] = Professor::with('user')->get();
+                    break;
+            }
+        }
+        else{
+
+            $result['students'] = Student::with('user')->get();
+            $result['professors'] = Professor::with('user')->get();
+        }
+        
+        return response()->json($result);
     }
 }
