@@ -17,14 +17,14 @@ class CreateProfessorsTable extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->unsignedBigInteger('major_id');
+            $table->unsignedBigInteger('major_id')->nullable();
             $table->foreign('major_id')->references('id')->on('majors');
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->enum('level', ['استادیار', 'استادتمام']);
-            $table->enum('degree', ['Doctor', 'Bachelor']);
+            $table->enum('level', ['استادیار', 'استادتمام'])->nullable();
+            $table->enum('degree', ['Doctor', 'Bachelor'])->nullable();
 
         });
     }

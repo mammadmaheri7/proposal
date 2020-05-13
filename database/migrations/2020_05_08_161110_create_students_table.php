@@ -17,12 +17,12 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->string('student_number');
-            $table->date('beginning_year');
-            $table->enum('type',['roozane','shabane','pardis']);
-            $table->enum('grade',['UnderGraduate','BA','MA']);
+            $table->string('student_number')->nullable();
+            $table->date('beginning_year')->nullable();
+            $table->enum('type',['roozane','shabane','pardis'])->nullable();
+            $table->enum('grade',['UnderGraduate','BA','MA'])->nullable();
 
-            $table->unsignedBigInteger('major_id');
+            $table->unsignedBigInteger('major_id')->nullable();
             $table->foreign('major_id')->references('id')->on('majors');
 
             $table->unsignedBigInteger('user_id');

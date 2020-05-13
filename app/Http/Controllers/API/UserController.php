@@ -75,6 +75,19 @@ class UserController extends Controller
         $role = Role::find($request->input('role_id'));
 
         $user = User::create($input);
+        switch ($request->input('role_id')){
+            case '2':
+                $student = Student::create([
+                    'user_id'   =>  $user->id
+                ]);
+                break;
+            case '3':
+            case '4':
+                $professor = Professor::create([
+                    'user_id'   =>  $user->id
+                ]);
+                break;
+        }
 
         //$user->role()->save($request->input('role_id'));
         $response = [

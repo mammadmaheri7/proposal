@@ -14,7 +14,8 @@ class MajorController extends Controller
      */
     public function index()
     {
-        return Major::all();
+        $majors = Major::all();
+        return response()->json(['status'=>'success','majors'=>$majors]);
     }
 
     /**
