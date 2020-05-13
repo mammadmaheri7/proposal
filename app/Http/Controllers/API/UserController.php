@@ -148,8 +148,8 @@ class UserController extends Controller
             case 'group_manager':
             case 'professor' :
                 $data = array_filter(json_decode($request->input('detail'),true));
-                $professor = Professor::updateOrCreate(array_merge(['user_id'=>$modify_user->id],$data),
-                    $data);
+                $professor = Professor::where('user_id',$modify_user->id)->first();
+                $professor ->update($data);
                 break;
         }
 
