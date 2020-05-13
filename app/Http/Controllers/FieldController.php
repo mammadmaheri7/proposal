@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Field;
 use Illuminate\Http\Request;
 
-class FieldCotroller extends Controller
+class FieldController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class FieldCotroller extends Controller
      */
     public function index()
     {
-        return Field::all();
+        $fields =  Field::all();
+        return response()->json(['status'=>'success','fields'=>$fields]);
     }
 
     /**

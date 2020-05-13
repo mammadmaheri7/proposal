@@ -155,23 +155,26 @@ class UserController extends Controller
             return response()->json(['error'=>'Unauthorised - you should be admin'], 401);
         }
 
-        $result = [];
+        $result = [
+            'students'=>null,
+            'professors'=>null,
+        ];
         if(array_key_exists('type',$request->all())) {
             switch ($request->input('type')){
                 case 'student':
-                    $result['students'] = Student::with('user')->get();
+                    $result['students'] = Student::with(['user','major'])->get();
                     break;
                 case 'professor':
-                    $result['professors'] = Professor::with('user')->get()->flatten(1);
+                    $result['professors'] = Professor::with(['user','major'])->get();
                     break;
             }
         }
         else{
 
-            $result['students'] = Student::with('user')->get();
-            $result['professors'] = Professor::with('user')->get();
+            $result['students'] = Student::with(['user','major'])->get();
+            $result['professors'] = Professor::with(['user','major'])->get();
         }
 
-        return response()->json(['status'=>'success','result'=>$result]);
+        return response()->json(['status'=>'success','professors'=>$result['professors'],'students'=>$result['students']]);
     }
 }
