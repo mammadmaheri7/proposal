@@ -171,7 +171,7 @@ class UserController extends Controller
             $result['students'] = Student::with('user')->get();
             $result['professors'] = Professor::with('user')->get();
         }
-        
+
         return response()->json($result);
     }
 }

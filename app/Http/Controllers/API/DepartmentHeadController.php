@@ -38,9 +38,19 @@ class DepartmentHeadController extends Controller
             return response()->json(['error'=>'Unauthorised - you should be head of apartment'], 401);
         }
         $professor = Professor::where('user_id',$user->id)->first();
-        $proposals = Proposal::with(['student' => function ($query) use ($professor) {
-            $query->where('major_id', $professor->major_id);
-        }])->get();
+
+        $proposals = Proposal::whereHas('student' , function ($query) use ($professor) {
+                $query->where('major_id', $professor->major_id)
+                        ->orWhereNull('major_id');
+            })
+            ->with(['student','professor','judge1','judge2'])
+            ->get();
+
+        /*
+        $proposals = Proposal::has('student')
+            ->whereHas('student')
+                                get();
+        */
 
         return response()->json(['status'=>'success','proposals'=>$proposals]);
     }
