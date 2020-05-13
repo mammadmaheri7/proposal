@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f3d70b9-77ff-4ba7-9662-36ee1e12653e" name="Default" comment="release">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/API/DepartmentHeadController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/DepartmentHeadController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Student.php" afterPath="$PROJECT_DIR$/app/Student.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/ProposalSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/ProposalSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/api.php" afterPath="$PROJECT_DIR$/routes/api.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
     </list>
     <ignored path="proposal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="164" column="71" selection-start-line="164" selection-start-column="71" selection-end-line="164" selection-end-column="71" />
+            <state relative-caret-position="570">
+              <caret line="174" column="71" selection-start-line="174" selection-start-column="71" selection-end-line="174" selection-end-column="71" />
               <folding>
                 <element signature="e#42#60#0#PHP" expanded="true" />
                 <element signature="e#342#449#0#PHP" expanded="false" />
@@ -51,7 +48,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FieldCotroller.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FieldCotroller.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FieldCotroller.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="280">
@@ -175,13 +172,13 @@
         <option value="$PROJECT_DIR$/app/Proposal.php" />
         <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Professor.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MajorController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/DepartmentHeadController.php" />
         <option value="$PROJECT_DIR$/app/Student.php" />
         <option value="$PROJECT_DIR$/database/seeds/ProposalSeeder.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FieldCotroller.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
       </list>
     </option>
   </component>
@@ -344,7 +341,7 @@
       <workItem from="1588790674002" duration="19490000" />
       <workItem from="1588943168980" duration="20809000" />
       <workItem from="1589193829190" duration="20271000" />
-      <workItem from="1589378655726" duration="10358000" />
+      <workItem from="1589378655726" duration="10478000" />
     </task>
     <task id="LOCAL-00001" summary="release">
       <created>1588813442407</created>
@@ -357,7 +354,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70928000" />
+    <option name="totallyTimeSpent" value="71048000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
@@ -769,19 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="164" column="71" selection-start-line="164" selection-start-column="71" selection-end-line="164" selection-end-column="71" />
-          <folding>
-            <element signature="e#42#60#0#PHP" expanded="true" />
-            <element signature="e#342#449#0#PHP" expanded="false" />
-            <element signature="e#454#1465#0#PHP" expanded="false" />
-            <element signature="e#1470#1549#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/ProposalSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
@@ -811,6 +795,19 @@
         <state relative-caret-position="280">
           <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="174" column="71" selection-start-line="174" selection-start-column="71" selection-end-line="174" selection-end-column="71" />
+          <folding>
+            <element signature="e#42#60#0#PHP" expanded="true" />
+            <element signature="e#342#449#0#PHP" expanded="false" />
+            <element signature="e#454#1465#0#PHP" expanded="false" />
+            <element signature="e#1470#1549#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

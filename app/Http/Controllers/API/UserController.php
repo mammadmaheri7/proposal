@@ -172,6 +172,6 @@ class UserController extends Controller
             $result['professors'] = Professor::with('user')->get();
         }
 
-        return response()->json($result);
+        return response()->json(['status'=>'success','result'=>$result]);
     }
 }
