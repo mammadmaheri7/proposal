@@ -33,7 +33,6 @@ class UserController extends Controller
             ], 401);
         }
 
-
         if(Auth::guard('web')->attempt(['national_number' => request('national_number'), 'password' => request('password')])){
             $user = Auth::guard('web')->user();
             $token =  $user->createToken('MyApp')-> accessToken;
@@ -49,6 +48,7 @@ class UserController extends Controller
             return response()->json(['error'=>'Unauthorised'], 401);
         }
     }
+
     /**
      * Register api
      *
@@ -99,6 +99,7 @@ class UserController extends Controller
 
         return response()->json($response, $this-> successStatus);
     }
+
     /**
      * details api
      *
@@ -109,7 +110,6 @@ class UserController extends Controller
         $user = Auth::user();
         return response()->json(['status' => 'success','user' => $user], $this-> successStatus);
     }
-
 
     /**
      * @param Request $request
@@ -139,7 +139,6 @@ class UserController extends Controller
         $role = $modify_user->role;
         $modify_user->update(array_filter($request->all()));
 
-
         switch ($role->title)
         {
             case 'student':
@@ -156,7 +155,6 @@ class UserController extends Controller
 
         return response()->json(['status'=>'success']);
     }
-
 
     /**
      * @param Request $request
@@ -190,5 +188,15 @@ class UserController extends Controller
         }
 
         return response()->json(['status'=>'success','professors'=>$result['professors'],'students'=>$result['students']]);
+    }
+
+    public function modify_profile(Request $request)
+    {
+        $user = Auth::user();
+        $data = $request->all();
+        $data['password'] = bcrypt($request->input('password'));
+        $user->update($data);
+        return $user;
+        return response(['status'=>'success'],$this->successStatus);
     }
 }

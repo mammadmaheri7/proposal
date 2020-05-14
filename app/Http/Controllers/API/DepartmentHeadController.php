@@ -38,7 +38,7 @@ class DepartmentHeadController extends Controller
             return response()->json(['error'=>'Unauthorised - you should be head of apartment or judge'], 401);
         }
         $professor = Professor::where('user_id',$user->id)->first();
-        
+
 
         $proposals = Proposal::
                 when($user->role_id==3,function ($query) use ($professor){
@@ -65,6 +65,10 @@ class DepartmentHeadController extends Controller
         return response()->json(['status'=>'success','proposals'=>$proposals]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function choose_judge(Request $request)
     {
         $validator = Validator::make($request->all(), [
