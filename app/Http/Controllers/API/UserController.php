@@ -198,7 +198,8 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $data = $request->all();
-        $data['password'] = bcrypt($request->input('password'));
+        $data['password'] = $request->input('password')?bcrypt($request->input('password')):null;
+        $data = array_filter($data);
         $user->update($data);
         return response(['status'=>'success'],$this->successStatus);
     }
