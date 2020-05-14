@@ -48,11 +48,9 @@ class JudgeController extends Controller
 
         switch ($professor->id){
             case $supervisor_id:
-                return 'a';
                 $proposal_result->update(['supervisor_response'=>$request->input('judge_response')]);
                 break;
             case $judge_id1:
-                return 'b';
                 $proposal_result->update(['judge1_response'=>$request->input('judge_response'),
                                     'judge1_message'=>$request->input('judge_message')]);
                 break;
@@ -61,8 +59,6 @@ class JudgeController extends Controller
                     'judge2_message'=>$request->input('judge_message')]);
         }
 
-        return $proposal_result;
-
-
+        return response()->json(['status'=>'success']);
     }
 }

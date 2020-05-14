@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6f3d70b9-77ff-4ba7-9662-36ee1e12653e" name="Default" comment="release">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/API/DepartmentHeadController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/DepartmentHeadController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/API/JudgeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/JudgeController.php" />
     </list>
     <ignored path="proposal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JudgeController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="JudgeController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/JudgeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="745">
-              <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+            <state relative-caret-position="535">
+              <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
               <folding>
                 <element signature="e#44#80#0#PHP" expanded="true" />
               </folding>
@@ -109,17 +110,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DepartmentHeadController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DepartmentHeadController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/DepartmentHeadController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+            <state relative-caret-position="385">
+              <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
               <folding>
                 <element signature="e#320#407#0#PHP" expanded="false" />
                 <element signature="e#412#926#0#PHP" expanded="false" />
                 <element signature="e#932#1019#0#PHP" expanded="false" />
-                <element signature="e#2344#2431#0#PHP" expanded="false" />
-                <element signature="e#2436#3496#0#PHP" expanded="false" />
+                <element signature="e#2336#2423#0#PHP" expanded="false" />
+                <element signature="e#2428#3488#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -138,8 +139,8 @@
       <file leaf-file-name="2020_05_08_171403_create_proposal_results_table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_08_171403_create_proposal_results_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="22" column="42" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="42" />
+            <state relative-caret-position="420">
+              <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -197,9 +198,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/JudgeController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_05_08_171403_create_proposal_results_table.php" />
         <option value="$PROJECT_DIR$/app/Proposal.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/JudgeController.php" />
         <option value="$PROJECT_DIR$/app/ProposalResult.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/DepartmentHeadController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/JudgeController.php" />
       </list>
     </option>
   </component>
@@ -496,7 +497,7 @@
       <workItem from="1588790674002" duration="19490000" />
       <workItem from="1588943168980" duration="20809000" />
       <workItem from="1589193829190" duration="20271000" />
-      <workItem from="1589378655726" duration="32257000" />
+      <workItem from="1589378655726" duration="34131000" />
     </task>
     <task id="LOCAL-00001" summary="release">
       <created>1588813442407</created>
@@ -509,7 +510,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92827000" />
+    <option name="totallyTimeSpent" value="94701000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
@@ -934,16 +935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/JudgeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
-          <folding>
-            <element signature="e#44#80#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Proposal.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1820">
@@ -956,14 +947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-245">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_08_171403_create_proposal_results_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -984,16 +967,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_08_171403_create_proposal_results_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/DepartmentHeadController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+        <state relative-caret-position="385">
+          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
           <folding>
             <element signature="e#320#407#0#PHP" expanded="false" />
             <element signature="e#412#926#0#PHP" expanded="false" />
             <element signature="e#932#1019#0#PHP" expanded="false" />
-            <element signature="e#2344#2431#0#PHP" expanded="false" />
-            <element signature="e#2436#3496#0#PHP" expanded="false" />
+            <element signature="e#2336#2423#0#PHP" expanded="false" />
+            <element signature="e#2428#3488#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/JudgeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+          <folding>
+            <element signature="e#44#80#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
