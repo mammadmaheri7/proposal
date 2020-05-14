@@ -190,6 +190,10 @@ class UserController extends Controller
         return response()->json(['status'=>'success','professors'=>$result['professors'],'students'=>$result['students']]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
     public function modify_profile(Request $request)
     {
         $user = Auth::user();

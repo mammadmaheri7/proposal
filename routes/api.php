@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('modify_user','API\UserController@modify_user');
     Route::get('users','API\UserController@index');
     Route::post('modify_profile','API\UserController@modify_profile');
+    Route::post('judge_proposal','API\JudgeController@judge');
 
     Route::resource('major','MajorController');
     Route::resource('field','FieldController');
