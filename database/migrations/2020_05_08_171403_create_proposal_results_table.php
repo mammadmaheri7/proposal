@@ -17,10 +17,12 @@ class CreateProposalResultsTable extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->enum('judge1_response',['accept','decline','miner','major']);
-            $table->enum('judge2_response',['accept','decline','miner','major']);
-            $table->enum('supervisor_response',['accept','decline','miner','major']);
-            $table->enum('status',['accepted','decline','first_accept','waiting']);
+            $table->enum('judge1_response',['accept','decline','miner','major'])->nullable();
+            $table->string('judge1_message')->nullable();
+            $table->enum('judge2_response',['accept','decline','miner','major'])->nullable();
+            $table->string('judge2_message')->nullable();
+            $table->enum('supervisor_response',['accept','decline','miner','major'])->nullable();
+            $table->enum('status',['accepted','decline','first_accept','waiting'])->nullable();
         });
     }
 

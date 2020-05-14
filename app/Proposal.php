@@ -48,5 +48,10 @@ class Proposal extends Model
         return $this->belongsTo('App\Professor');
     }
 
+    public function proposal_result()
+    {
+        return $this->belongsTo('App\ProposalResult');
+    }
+
 
 }
