@@ -39,7 +39,7 @@ class DepartmentHeadController extends Controller
         }
         $professor = Professor::where('user_id',$user->id)->first();
 
-        return $professor;
+        
         $proposals = Proposal::
                 when($user->role_id==3,function ($query) use ($professor){
                     $query
