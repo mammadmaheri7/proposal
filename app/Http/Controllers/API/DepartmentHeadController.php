@@ -38,11 +38,10 @@ class DepartmentHeadController extends Controller
     public function get_proposals_information(Request $request)
     {
         $user = Auth::user();
-        if (Gate::denies('department-head',$user) and Gate::denies('professor')){
-            return response()->json(['error'=>'Unauthorised - you should be head of apartment or judge'], 401);
+        if (Gate::denies('department-head',$user) and Gate::denies('professor')  and Gate::denies('admin')){
+            return response()->json(['error'=>'Unauthorised - you should be head of apartment or judge or admin'], 401);
         }
         $professor = Professor::where('user_id',$user->id)->first();
-
 
         $proposals = Proposal::
                 when($user->role_id==3,function ($query) use ($professor){
@@ -51,7 +50,7 @@ class DepartmentHeadController extends Controller
                         $query->where('major_id', $professor->major_id)
                             ->orWhereNull('major_id');
                     });
-                },function ($query) use ($professor){
+                })->when($user->role_id==4,function ($query) use ($professor){
                     $query
                         ->where('judge1_id',$professor->id)
                         ->orWhere('judge2_id',$professor->id);
