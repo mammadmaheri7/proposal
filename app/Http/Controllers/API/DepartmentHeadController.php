@@ -19,11 +19,15 @@ class DepartmentHeadController extends Controller
     public function get_professor_information(Request $request)
     {
         $user = Auth::user();
-        if (Gate::denies('department-head',$user) ){
-            return response()->json(['error'=>'Unauthorised - you should be head of apartment'], 401);
+        if (Gate::denies('department-head',$user) and Gate::denies('admin') ){
+            return response()->json(['error'=>'Unauthorised - you should be head of apartment or admin'], 401);
         }
-        $professor = Professor::where('user_id',$user->id)->first();
-        $related_professors = Professor::where('major_id',$professor->major_id)->get();
+
+        $related_professors = Professor::when($user->role_id==3,function ($query) use ($user){
+                $professor = Professor::where('user_id',$user->id)->first();
+                $query->where('major_id',$professor->major_id);
+            })->get();
+
         return response()->json(['status'=>'success','professors'=>$related_professors]);
     }
 
