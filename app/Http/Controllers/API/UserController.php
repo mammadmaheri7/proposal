@@ -201,6 +201,6 @@ class UserController extends Controller
         $data['password'] = $request->input('password')?bcrypt($request->input('password')):null;
         $data = array_filter($data);
         $user->update($data);
-        return response(['status'=>'success'],$this->successStatus);
+        return response(['status'=>'success','email'=>$user->email],$this->successStatus);
     }
 }
