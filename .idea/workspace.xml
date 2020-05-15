@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6f3d70b9-77ff-4ba7-9662-36ee1e12653e" name="Default" comment="release">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/API/DepartmentHeadController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/DepartmentHeadController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2020_05_08_160728_create_professors_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_05_08_160728_create_professors_table.php" />
     </list>
     <ignored path="proposal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,16 +47,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Proposal.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Proposal.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1820">
-              <caret line="52" column="52" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Result.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/vlucas/phpdotenv/src/Result/Result.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -76,10 +67,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="api.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="910">
+            <state relative-caret-position="259">
               <caret line="27" column="95" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="95" />
               <folding />
             </state>
@@ -96,17 +87,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DepartmentHeadController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DepartmentHeadController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/DepartmentHeadController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+            <state relative-caret-position="850">
+              <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
               <folding>
                 <element signature="e#320#407#0#PHP" expanded="false" />
                 <element signature="e#1071#1158#0#PHP" expanded="false" />
-                <element signature="e#2535#2622#0#PHP" expanded="false" />
-                <element signature="e#2627#3687#0#PHP" expanded="false" />
+                <element signature="e#2705#2792#0#PHP" expanded="false" />
+                <element signature="e#2797#3857#0#PHP" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2020_05_08_160728_create_professors_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_08_160728_create_professors_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="395">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -185,7 +186,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/MajorController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_05_08_161110_create_students_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_05_08_160728_create_professors_table.php" />
         <option value="$PROJECT_DIR$/database/factories/UserFactory.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/JudgeController.php" />
@@ -195,6 +195,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/JudgeController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
         <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_05_08_160728_create_professors_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/DepartmentHeadController.php" />
       </list>
     </option>
@@ -493,7 +494,7 @@
       <workItem from="1588943168980" duration="20809000" />
       <workItem from="1589193829190" duration="20271000" />
       <workItem from="1589378655726" duration="34131000" />
-      <workItem from="1589467711862" duration="2929000" />
+      <workItem from="1589467711862" duration="7142000" />
     </task>
     <task id="LOCAL-00001" summary="release">
       <created>1588813442407</created>
@@ -506,7 +507,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97630000" />
+    <option name="totallyTimeSpent" value="101843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
@@ -689,6 +690,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1670">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -768,14 +770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_08_160728_create_professors_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -896,14 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="910">
-          <caret line="27" column="95" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_08_171403_create_proposal_results_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -957,16 +943,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_08_160728_create_professors_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/DepartmentHeadController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+        <state relative-caret-position="850">
+          <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
           <folding>
             <element signature="e#320#407#0#PHP" expanded="false" />
             <element signature="e#1071#1158#0#PHP" expanded="false" />
-            <element signature="e#2535#2622#0#PHP" expanded="false" />
-            <element signature="e#2627#3687#0#PHP" expanded="false" />
+            <element signature="e#2705#2792#0#PHP" expanded="false" />
+            <element signature="e#2797#3857#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="27" column="95" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="95" />
+          <folding />
         </state>
       </provider>
     </entry>

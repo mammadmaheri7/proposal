@@ -25,7 +25,6 @@ class CreateProfessorsTable extends Migration
 
             $table->enum('level', ['استادیار', 'استادتمام'])->nullable();
             $table->enum('degree', ['Doctor', 'Bachelor'])->nullable();
-
         });
     }
 

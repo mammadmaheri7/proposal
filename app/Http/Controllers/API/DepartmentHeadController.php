@@ -56,7 +56,11 @@ class DepartmentHeadController extends Controller
                         ->orWhere('judge2_id',$professor->id);
                 })
 
-            ->with(['student','professor','judge1','judge2','student.user','student.major'])
+            ->with(['student','student.user','student.major',
+                    'professor','professor.user','professor.major',
+                    'judge1','judge1.user','judge1.major',
+                    'judge2','judge2.user','judge2.major',
+            ])
             ->get();
 
         /*
